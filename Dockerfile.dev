@@ -1,0 +1,19 @@
+FROM node:12.16.1
+
+# create new working directory
+WORKDIR /src
+
+# make sure to run latest version of npm
+RUN npm i npm@latest -g
+
+# fetch dependencies on a separate layer first as it's not changing that often,
+# will be cached and speed up the image build process
+COPY ./package.json ./package-lock.json ./
+RUN npm i
+
+# copy the rest of the source files into working directory
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "run", "start:dev"]

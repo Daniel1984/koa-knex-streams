@@ -1,0 +1,20 @@
+{
+  "name": "stream-test-knex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "pm2-runtime src/server.js -i max",
+    "start:dev": "pm2-dev src/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "knex": "^0.20.13",
+    "koa": "^2.11.0",
+    "koa-router": "^8.0.8",
+    "pg": "^8.0.0",
+    "pm2": "^4.2.3"
+  }
+}
