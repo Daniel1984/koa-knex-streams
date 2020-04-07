@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "pm2-runtime src/server.js -i max",
-    "start:dev": "pm2-dev src/server.js"
+    "start:dev": "pm2-dev src/server.js",
+    "migrate:up": "knex migrate:up",
+    "migrate:down": "knex migrate:down"
   },
   "author": "",
   "license": "ISC",
