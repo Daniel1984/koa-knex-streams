@@ -1,5 +1,7 @@
+const fs = require('fs');
+const db = require('../../../services/db');
+
 module.exports = (ctx, next) => {
-  //ctx.throw(500, 'oops', { msg: 'sprry' });
-  ctx.status = 200;
-  ctx.body = { message: 'stream' };
+  const stream = db.select('*').from('users').limit(10).stream();
+  ctx.body = ctx.req.pipe(stream)
 };
