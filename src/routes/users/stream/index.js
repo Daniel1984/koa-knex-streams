@@ -1,4 +1,3 @@
-const fs = require('fs');
 const Stringify = require('streaming-json-stringify')
 const db = require('../../../services/db');
 
@@ -20,13 +19,12 @@ module.exports = async (ctx) => {
 };
 
 function pipe(from, to, options) {
-	return new Promise((resolve, reject) => {
-
+  return new Promise((resolve, reject) => {
     from
       .pipe(Stringify())
       .pipe(to, options);
 
-		from.on('error', reject);
-		from.on('end', resolve);
-	})
+    from.on('error', reject);
+    from.on('end', resolve);
+  })
 }
