@@ -13,10 +13,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@koa/router": "^9.0.0",
     "dotenv": "^8.2.0",
     "knex": "^0.20.13",
     "koa": "^2.11.0",
-    "koa-router": "^8.0.8",
     "pg": "^8.0.0",
     "pg-query-stream": "^3.0.4",
     "pm2": "^4.2.3",
