@@ -3,9 +3,9 @@ const Stringify = require('streaming-json-stringify')
 const db = require('../../../services/db');
 
 module.exports = async (ctx) => {
-  ctx.type = 'text/event-stream; charset=utf-8';
-  ctx.set('Cache-Control', 'no-cache');
+  ctx.type = 'application/json; charset=utf-8';
   ctx.set('Connection', 'keep-alive');
+  ctx.status = 200;
 
   const stream = db
     .select('*')
