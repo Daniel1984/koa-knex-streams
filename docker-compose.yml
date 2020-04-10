@@ -1,12 +1,12 @@
 version: "3.7"
 
 volumes:
-  testvolume:
-    name: test-volume
+  streamervolume:
+    name: streamer-volume
 
 networks:
-  testnetwork:
-    name: test-network
+  streamernetwork:
+    name: streamer-network
 
 services:
   pg:
@@ -17,10 +17,10 @@ services:
     ports:
       - "${POSTGRES_PORT}:${POSTGRES_PORT}"
     volumes:
-      - testvolume:/var/lib/postgresql/data
+      - streamervolume:/var/lib/postgresql/data
     networks:
-      - testnetwork
-  test_api:
+      - streamernetwork
+  streamer_api:
     build:
       context: .
       dockerfile: Dockerfile.dev
@@ -34,6 +34,6 @@ services:
     ports:
       - "${API_PORT}:${API_PORT}"
     networks:
-      - testnetwork
+      - streamernetwork
     env_file:
       - .env

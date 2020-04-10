@@ -6,10 +6,10 @@ const connection = {
   database: config.db,
   user:     config.dbUser,
   password: config.dbPwd,
+  host:     config.dbHost,
 };
 
 module.exports = {
-
   development: {
     client: 'postgresql',
     connection,
@@ -45,5 +45,4 @@ module.exports = {
       tableName: 'knex_migrations'
     }
   }
-
 };
