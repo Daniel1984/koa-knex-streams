@@ -19,7 +19,7 @@
     "koa": "^2.11.0",
     "pg": "^8.0.0",
     "pg-query-stream": "^3.0.4",
-    "pm2": "^4.2.3",
+    "pm2": "^5.2.0",
     "streaming-json-stringify": "^3.1.0"
   }
 }
